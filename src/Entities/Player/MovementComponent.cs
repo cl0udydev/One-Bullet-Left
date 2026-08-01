@@ -3,13 +3,12 @@ using System;
 
 public partial class MovementComponent : Node
 {
-	private CharacterBody2D _parentBody;
+	[Export] private CharacterBody2D BodyToMove;
 
-	[Export] public float Speed { get; set; } = 1750.0f;
+	[Export] public float Speed { get; set; }
 
 	public override void _Ready()
 	{
-		_parentBody = GetParent<CharacterBody2D>();
 	}
 
 	public override void _Process(double delta)
@@ -18,7 +17,7 @@ public partial class MovementComponent : Node
 
 	public void Move(Vector2 inputDirection)
 	{
-		_parentBody.Velocity = inputDirection * Speed;
-		_parentBody.MoveAndSlide();
+		BodyToMove.Velocity = inputDirection * Speed;
+		BodyToMove.MoveAndSlide();
 	}
 }

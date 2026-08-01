@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://tkwb88xvcmdt" path="res://src/Entities/Player/PlayerController.cs" id="1_1pnha"]
 [ext_resource type="Texture2D" uid="uid://dfutpq5g7gwwf" path="res://assets/Entities/Player/spr_player.png" id="1_xyix2"]
 [ext_resource type="Script" uid="uid://d1sgw4m34jh84" path="res://src/Entities/Player/MovementComponent.cs" id="3_1ehwi"]
+[ext_resource type="Texture2D" uid="uid://1g20bcbeedyq" path="res://assets/Entities/Player/spr_shoot_fire.png" id="3_cx5l2"]
+[ext_resource type="Script" uid="uid://cf168c2lm0ytd" path="res://src/Entities/Player/WeaponComponent.cs" id="4_e1ays"]
+[ext_resource type="PackedScene" uid="uid://bag0icpwcrai7" path="res://src/Entities/Bullet/bullet.tscn" id="5_346rv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ubtcc"]
 radius = 120.01666
@@ -13,9 +16,26 @@ script = ExtResource("1_1pnha")
 [node name="PlayerSprite" type="Sprite2D" parent="." unique_id=1891616458]
 texture = ExtResource("1_xyix2")
 
+[node name="Marker2D" type="Marker2D" parent="PlayerSprite" unique_id=1019513290]
+position = Vector2(239, 0)
+
+[node name="ShootSprite" type="Sprite2D" parent="PlayerSprite" unique_id=1029668059]
+visible = false
+position = Vector2(278, 3)
+scale = Vector2(14.000001, 14.000001)
+texture = ExtResource("3_cx5l2")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1014472454]
-position = Vector2(-66, 0)
+position = Vector2(-69, -2)
 shape = SubResource("CircleShape2D_ubtcc")
 
-[node name="MovementComponent" type="Node" parent="." unique_id=1617792103]
+[node name="MovementComponent" type="Node" parent="." unique_id=1617792103 node_paths=PackedStringArray("BodyToMove")]
 script = ExtResource("3_1ehwi")
+BodyToMove = NodePath("..")
+Speed = 1750.0
+
+[node name="WeaponComponent" type="Node" parent="." unique_id=963335777 node_paths=PackedStringArray("_marker", "_shootSprite")]
+script = ExtResource("4_e1ays")
+BulletScene = ExtResource("5_346rv")
+_marker = NodePath("../PlayerSprite/Marker2D")
+_shootSprite = NodePath("../PlayerSprite/ShootSprite")
