@@ -14,10 +14,6 @@ public partial class PlayerController : CharacterBody2D
 		_sprite = GetNode<Sprite2D>("PlayerSprite");
 	}
 
-	public override void _Process(double delta)
-	{
-	}
-
     public override void _PhysicsProcess(double delta)
     {
         base._PhysicsProcess(delta);

@@ -14,10 +14,6 @@ public partial class WeaponComponent : Node
 		_haveBullet = true;
 	}
 
-	public override void _Process(double delta)
-	{
-	}
-
 	public async void Shoot(Vector2 direction)
 	{
 		if (_haveBullet)
@@ -30,6 +26,8 @@ public partial class WeaponComponent : Node
 			newBullet.GlobalRotation = _marker.GlobalRotation;
 
 			GetTree().Root.AddChild(newBullet);
+
+			EventBus.EmitSound(SoundType.Shot);
 			
 			_shootSprite.Show();
 

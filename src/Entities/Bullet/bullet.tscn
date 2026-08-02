@@ -4,15 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://d8wmgnh13iv4" path="res://assets/Entities/Bullet/spr_bullet.png" id="1_aryhd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aryhd"]
-radius = 30.0
-height = 84.0
+radius = 25.0
+height = 74.0
 
 [node name="Bullet" type="Area2D" unique_id=1732022588]
 script = ExtResource("1_16qjq")
 Speed = 250.0
 
 [node name="BulletSprite" type="Sprite2D" parent="." unique_id=1829611185]
-scale = Vector2(18.78125, 18.78125)
+scale = Vector2(16.140625, 16.140625)
 texture = ExtResource("1_aryhd")
 
 [node name="BulletCollision" type="CollisionShape2D" parent="." unique_id=1133918287]

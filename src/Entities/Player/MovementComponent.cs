@@ -7,14 +7,6 @@ public partial class MovementComponent : Node
 
 	[Export] public float Speed { get; set; }
 
-	public override void _Ready()
-	{
-	}
-
-	public override void _Process(double delta)
-	{
-	}
-
 	public void Move(Vector2 inputDirection)
 	{
 		BodyToMove.Velocity = inputDirection * Speed;

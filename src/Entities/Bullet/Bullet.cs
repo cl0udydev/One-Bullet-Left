@@ -7,15 +7,6 @@ public partial class Bullet : Area2D
 	
 	private Vector2 _direction;
 
-	public override void _Ready()
-	{
-		
-	}
-
-	public override void _Process(double delta)
-	{
-	}
-
     public override void _PhysicsProcess(double delta)
     {
         base._PhysicsProcess(delta);

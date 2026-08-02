@@ -17,6 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+EventBus="*uid://gcbewvk45qoi"
+AudioManager="*uid://duux78jncfdnb"
 GameManager="*uid://b2h2sw1vjfj6m"
 
 [display]
