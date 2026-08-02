@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://cdkyiumnhct8"]
+
+[ext_resource type="Script" uid="uid://cte2xtoygyexg" path="res://src/Entities/Enemy/EnemyController.cs" id="1_2qoqy"]
+[ext_resource type="Script" uid="uid://6yvwjpyiuruo" path="res://src/Entities/Enemy/EnemyStateMachine.cs" id="2_ej3j3"]
+[ext_resource type="Texture2D" uid="uid://be7vxvo6shgbx" path="res://assets/Entities/Enemy/spr_enemy.png" id="2_fpf7n"]
+[ext_resource type="Script" uid="uid://d1sgw4m34jh84" path="res://src/Entities/Player/MovementComponent.cs" id="3_gk8ox"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fpf7n"]
+radius = 101.24229
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gk8ox"]
+radius = 2839.7043
+
+[node name="Enemy" type="CharacterBody2D" unique_id=781765464]
+script = ExtResource("1_2qoqy")
+
+[node name="EnemyStateMachine" type="Node" parent="." unique_id=605142818]
+script = ExtResource("2_ej3j3")
+
+[node name="MovementComponent" type="Node" parent="." unique_id=1022412702 node_paths=PackedStringArray("BodyToMove")]
+script = ExtResource("3_gk8ox")
+BodyToMove = NodePath("..")
+Speed = 1550.0
+
+[node name="EnemySprite" type="Sprite2D" parent="." unique_id=831386245]
+scale = Vector2(8.78125, 8.78125)
+texture = ExtResource("2_fpf7n")
+
+[node name="EnemyCollision" type="CollisionShape2D" parent="." unique_id=822359801]
+shape = SubResource("CircleShape2D_fpf7n")
+
+[node name="VisibilityArea" type="Area2D" parent="." unique_id=123094310]
+
+[node name="VisibilityCollision" type="CollisionShape2D" parent="VisibilityArea" unique_id=1606998107]
+shape = SubResource("CircleShape2D_gk8ox")
+
+[connection signal="body_entered" from="VisibilityArea" to="EnemyStateMachine" method="OnVisibilityAreaBodyEntered"]
+[connection signal="body_exited" from="VisibilityArea" to="EnemyStateMachine" method="OnVisibilityAreaBodyExited"]

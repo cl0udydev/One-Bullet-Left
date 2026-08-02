@@ -6,7 +6,10 @@
 script = ExtResource("1_18wvh")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=5860936]
+volume_db = -5.0
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=828188629]
+volume_db = -5.0
 
 [node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="." unique_id=319223367]
+volume_db = -5.0
