@@ -15,9 +15,11 @@ radius = 2839.7043
 script = ExtResource("1_2qoqy")
 
 [node name="EnemyStateMachine" type="Node" parent="." unique_id=605142818]
+unique_name_in_owner = true
 script = ExtResource("2_ej3j3")
 
 [node name="MovementComponent" type="Node" parent="." unique_id=1022412702 node_paths=PackedStringArray("BodyToMove")]
+unique_name_in_owner = true
 script = ExtResource("3_gk8ox")
 BodyToMove = NodePath("..")
 Speed = 1550.0
@@ -34,5 +36,5 @@ shape = SubResource("CircleShape2D_fpf7n")
 [node name="VisibilityCollision" type="CollisionShape2D" parent="VisibilityArea" unique_id=1606998107]
 shape = SubResource("CircleShape2D_gk8ox")
 
-[connection signal="body_entered" from="VisibilityArea" to="EnemyStateMachine" method="OnVisibilityAreaBodyEntered"]
-[connection signal="body_exited" from="VisibilityArea" to="EnemyStateMachine" method="OnVisibilityAreaBodyExited"]
+[connection signal="body_entered" from="VisibilityArea" to="." method="OnVisibilityAreaBodyEntered"]
+[connection signal="body_exited" from="VisibilityArea" to="." method="OnVisibilityAreaBodyExited"]

@@ -9,8 +9,8 @@ public partial class EnemyController : CharacterBody2D
 
     public override void _Ready()
     {
-        _stateMachine = GetNode<EnemyStateMachine>("EnemyStateMachine");
-		_movementComponent = GetNode<MovementComponent>("MovementComponent");
+        _stateMachine = GetNode<EnemyStateMachine>("%EnemyStateMachine");
+		_movementComponent = GetNode<MovementComponent>("%MovementComponent");
 
 		_stateMachine.Initialize(new EnemyIdleState(this, _stateMachine, _movementComponent));
     }
