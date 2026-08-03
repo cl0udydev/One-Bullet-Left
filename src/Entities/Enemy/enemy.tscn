@@ -3,7 +3,8 @@
 [ext_resource type="Script" uid="uid://cte2xtoygyexg" path="res://src/Entities/Enemy/EnemyController.cs" id="1_2qoqy"]
 [ext_resource type="Script" uid="uid://6yvwjpyiuruo" path="res://src/Entities/Enemy/EnemyStateMachine.cs" id="2_ej3j3"]
 [ext_resource type="Texture2D" uid="uid://be7vxvo6shgbx" path="res://assets/Entities/Enemy/spr_enemy.png" id="2_fpf7n"]
-[ext_resource type="Script" uid="uid://d1sgw4m34jh84" path="res://src/Entities/Player/MovementComponent.cs" id="3_gk8ox"]
+[ext_resource type="Script" uid="uid://d1sgw4m34jh84" path="res://src/Entities/MovementComponent.cs" id="3_gk8ox"]
+[ext_resource type="Script" uid="uid://d3nfka4qtn1fm" path="res://src/Entities/HealthComponent.cs" id="4_ej3j3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fpf7n"]
 radius = 101.24229
@@ -15,14 +16,16 @@ radius = 2839.7043
 script = ExtResource("1_2qoqy")
 
 [node name="EnemyStateMachine" type="Node" parent="." unique_id=605142818]
-unique_name_in_owner = true
 script = ExtResource("2_ej3j3")
 
 [node name="MovementComponent" type="Node" parent="." unique_id=1022412702 node_paths=PackedStringArray("BodyToMove")]
-unique_name_in_owner = true
 script = ExtResource("3_gk8ox")
 BodyToMove = NodePath("..")
-Speed = 1550.0
+Speed = 1450.0
+
+[node name="HealthComponent" type="Node" parent="." unique_id=129602828]
+script = ExtResource("4_ej3j3")
+MaxHealth = 1
 
 [node name="EnemySprite" type="Sprite2D" parent="." unique_id=831386245]
 scale = Vector2(8.78125, 8.78125)

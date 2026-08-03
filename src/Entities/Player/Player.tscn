@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://tkwb88xvcmdt" path="res://src/Entities/Player/PlayerController.cs" id="1_1pnha"]
 [ext_resource type="Texture2D" uid="uid://dfutpq5g7gwwf" path="res://assets/Entities/Player/spr_player.png" id="1_xyix2"]
-[ext_resource type="Script" uid="uid://d1sgw4m34jh84" path="res://src/Entities/Player/MovementComponent.cs" id="3_1ehwi"]
+[ext_resource type="Script" uid="uid://d1sgw4m34jh84" path="res://src/Entities/MovementComponent.cs" id="3_1ehwi"]
 [ext_resource type="Texture2D" uid="uid://1g20bcbeedyq" path="res://assets/Entities/Player/spr_shoot_fire.png" id="3_cx5l2"]
 [ext_resource type="Script" uid="uid://cf168c2lm0ytd" path="res://src/Entities/Player/WeaponComponent.cs" id="4_e1ays"]
 [ext_resource type="PackedScene" uid="uid://bag0icpwcrai7" path="res://src/Entities/Bullet/bullet.tscn" id="5_346rv"]

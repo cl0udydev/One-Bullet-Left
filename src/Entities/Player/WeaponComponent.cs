@@ -14,6 +14,14 @@ public partial class WeaponComponent : Node
 		_haveBullet = true;
 	}
 
+	public void ReturnBullet()
+	{
+		if (!_haveBullet)
+		{
+			_haveBullet = true;
+		}
+	}
+
 	public async void Shoot(Vector2 direction)
 	{
 		if (_haveBullet)
@@ -34,6 +42,8 @@ public partial class WeaponComponent : Node
 			await ToSignal(GetTree().CreateTimer(0.05f), SceneTreeTimer.SignalName.Timeout);
 
 			_shootSprite.Hide();
+
+			_haveBullet = false;
 		}
 	}
 }
