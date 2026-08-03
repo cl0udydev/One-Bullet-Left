@@ -11,6 +11,7 @@ public class EnemyIdleState : EnemyState
     public override void Enter()
     {
         base.Enter();
+        _enemyController.EnemySprite.Play("idle");
     }
 
     public override void Exit()

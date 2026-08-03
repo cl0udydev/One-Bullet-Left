@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://be7vxvo6shgbx"
-path="res://.godot/imported/spr_enemy.png-fb509909405809816460d51fa7673361.ctex"
+uid="uid://dx3qjwfgdb2tx"
+path="res://.godot/imported/ss_biker_idle.png-1b5d4a7b5e127f03600ab68e22543bd5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Entities/Enemy/spr_enemy.png"
-dest_files=["res://.godot/imported/spr_enemy.png-fb509909405809816460d51fa7673361.ctex"]
+source_file="res://assets/Entities/Enemy/ss_biker_idle.png"
+dest_files=["res://.godot/imported/ss_biker_idle.png-1b5d4a7b5e127f03600ab68e22543bd5.ctex"]
 
 [params]
 

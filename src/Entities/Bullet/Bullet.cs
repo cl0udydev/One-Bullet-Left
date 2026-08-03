@@ -32,13 +32,13 @@ public partial class Bullet : Area2D
 			{
 				return;
 			}
-			
+
 			HealthComponent enemyHealth = body.GetNodeOrNull<HealthComponent>("HealthComponent");
 			if (enemyHealth != null)
 			{
 				enemyHealth.TakeDamage(Damage);
 				_isFlying = false;
-				GlobalPosition -= _direction * 35f; 
+				GlobalPosition -= _direction * 35f;
 			}
 		}
 		else

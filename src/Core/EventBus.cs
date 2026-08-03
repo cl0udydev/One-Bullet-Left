@@ -4,6 +4,7 @@ using System;
 public enum SoundType
 {
 	Shot,
+    PlayerAttacked,
 }
 
 public partial class EventBus : Node

@@ -3,7 +3,7 @@ using System;
 
 public class EnemyAttackState : EnemyState
 {
-    public float _attackCooldown = 1f;
+    public float _attackCooldown = 0.5f;
     public float _timer = 0f;
     public EnemyAttackState(EnemyController controller, EnemyStateMachine stateMachine, MovementComponent movementComponent) : base(controller, stateMachine, movementComponent)
     {
@@ -13,6 +13,8 @@ public class EnemyAttackState : EnemyState
     public override void Enter()
     {
         base.Enter();
+        _enemyController.EnemySprite.Play("idle");
+
         _timer = 0f;
 
         _movementComponent.Move(Vector2.Zero);
@@ -22,6 +24,7 @@ public class EnemyAttackState : EnemyState
         if (playerHealth != null)
         {
             playerHealth.TakeDamage(1);
+            EventBus.EmitSound(SoundType.PlayerAttacked);
         }
 
         // emit attack sound

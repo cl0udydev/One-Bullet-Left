@@ -13,6 +13,7 @@ public class EnemyChaseState : EnemyState
     public override void Enter()
     {
         base.Enter();
+        _enemyController.EnemySprite.Play("chase");
     }
 
     public override void Exit()
@@ -38,6 +39,10 @@ public class EnemyChaseState : EnemyState
             _enemyStateMachine.ChangeState(new EnemyAttackState(_enemyController, _enemyStateMachine, _movementComponent));
             return;
         }
+
+        _enemyController.EnemySprite.LookAt(targetPosition);
+        _enemyController.EnemySprite.Rotate(Mathf.Pi / 2); 
+        
         _movementComponent.Move(direction);
     }
     

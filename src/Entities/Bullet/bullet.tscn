@@ -9,7 +9,7 @@ height = 74.0
 
 [node name="Bullet" type="Area2D" unique_id=1732022588]
 script = ExtResource("1_16qjq")
-Speed = 10000.0
+Speed = 12000.0
 
 [node name="BulletSprite" type="Sprite2D" parent="." unique_id=1829611185]
 scale = Vector2(16.140625, 16.140625)
