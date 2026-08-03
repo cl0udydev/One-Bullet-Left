@@ -17,7 +17,14 @@ public partial class PlayerController : CharacterBody2D
 
 		_healthComponent.OnDied += HandleDeath;
 
+		EventBus.EmitPlayerHealthChanged(_healthComponent.CurrentHealth);
+
 	}
+
+    public override void _ExitTree()
+    {
+        _healthComponent.OnDied -= HandleDeath;
+    }
 
     public override void _PhysicsProcess(double delta)
     {

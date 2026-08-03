@@ -25,6 +25,15 @@ public partial class EnemyController : CharacterBody2D
 
 		_stateMachine.Initialize(new EnemyIdleState(this, _stateMachine, _movementComponent));
     }
+	
+
+    public override void _ExitTree()
+    {
+        base._ExitTree();
+		_healthComponent.OnDied -= HandleDeath;
+		EventBus.EmitSound(SoundType.EnemyAttacked);
+    }
+
 
 	public void OnVisibilityAreaBodyEntered(Node body)
 	{

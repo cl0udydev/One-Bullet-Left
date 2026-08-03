@@ -2,8 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://dva6kookq3udd" path="res://src/Entities/Player/Player.tscn" id="1_j6ulx"]
 [ext_resource type="PackedScene" uid="uid://cdkyiumnhct8" path="res://src/Entities/Enemy/enemy.tscn" id="2_qlwl6"]
+[ext_resource type="PackedScene" uid="uid://bnk1do887gggf" path="res://src/Interface/Hud/hud.tscn" id="3_h17g3"]
 
 [node name="Node2D" type="Node2D" unique_id=1789523357]
+
+[node name="Hud" parent="." unique_id=1996990712 instance=ExtResource("3_h17g3")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1386521384]
 zoom = Vector2(0.2, 0.2)

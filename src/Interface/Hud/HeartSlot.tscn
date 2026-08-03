@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://ckjdcywyx31lu"]
+
+[ext_resource type="Texture2D" uid="uid://dt3l068e53yr5" path="res://assets/Hud/ss_heart_damaged.png" id="1_ahlnf"]
+[ext_resource type="Texture2D" uid="uid://bs4017dqg3ay7" path="res://assets/Hud/spr_hollow_heart.png" id="2_hub6q"]
+[ext_resource type="Texture2D" uid="uid://ceuyuj7xdhssb" path="res://assets/Hud/spr_heart.png" id="3_7o60w"]
+[ext_resource type="Script" uid="uid://dlrkogq5lh5ad" path="res://src/Interface/Hud/HeartSlot.cs" id="4_hdg5i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahlnf"]
+atlas = ExtResource("1_ahlnf")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hub6q"]
+atlas = ExtResource("1_ahlnf")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7o60w"]
+atlas = ExtResource("1_ahlnf")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hdg5i"]
+atlas = ExtResource("1_ahlnf")
+region = Rect2(24, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ubtcc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ahlnf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hub6q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7o60w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hdg5i")
+}],
+"loop": 0,
+"name": &"damaged",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hub6q")
+}],
+"loop": 1,
+"name": &"empty",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_7o60w")
+}],
+"loop": 0,
+"name": &"full",
+"speed": 5.0
+}]
+
+[node name="HeartSlot" type="Control" unique_id=1662671957]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 66.121544
+offset_bottom = 67.17948
+scale = Vector2(11.3125, 11.3125)
+script = ExtResource("4_hdg5i")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=894485567]
+position = Vector2(32.707184, 32.972378)
+scale = Vector2(8.106354, 8.106354)
+sprite_frames = SubResource("SpriteFrames_ubtcc")
+animation = &"full"
+autoplay = "full"

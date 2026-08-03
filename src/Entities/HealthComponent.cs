@@ -5,7 +5,8 @@ using System.Data;
 public partial class HealthComponent : Node
 {
     [Export] public int MaxHealth;
-    private int CurrentHealth;
+    [Export] private bool _isPlayer = false;
+    public int CurrentHealth;
     public event Action OnDied;
 
     public override void _Ready()
@@ -16,7 +17,10 @@ public partial class HealthComponent : Node
     public void TakeDamage(int amount)
     {
         CurrentHealth = Mathf.Max(0, CurrentHealth - amount);
-
+        if (_isPlayer)
+        {
+            EventBus.EmitPlayerHealthChanged(CurrentHealth);
+        }
         if (CurrentHealth == 0)
         {
             OnDied?.Invoke();

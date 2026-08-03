@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://bnk1do887gggf"]
-
-[node name="Hud" type="CanvasLayer" unique_id=1996990712]
-
-[node name="GameplayUI" type="Control" parent="." unique_id=1446989900]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0

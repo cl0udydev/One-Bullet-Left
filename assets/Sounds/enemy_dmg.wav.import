@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://dd1rpqhppxkyy"
-path="res://.godot/imported/dmg.wav-264adbcdc66add76fb9c10a669d75d9b.sample"
+uid="uid://csnvdybc5da0y"
+path="res://.godot/imported/enemy_dmg.wav-c490b85baea3d32e12694304f2b33003.sample"
 
 [deps]
 
-source_file="res://assets/Sounds/dmg.wav"
-dest_files=["res://.godot/imported/dmg.wav-264adbcdc66add76fb9c10a669d75d9b.sample"]
+source_file="res://assets/Sounds/enemy_dmg.wav"
+dest_files=["res://.godot/imported/enemy_dmg.wav-c490b85baea3d32e12694304f2b33003.sample"]
 
 [params]
 

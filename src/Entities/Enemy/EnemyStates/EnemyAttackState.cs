@@ -26,9 +26,6 @@ public class EnemyAttackState : EnemyState
             playerHealth.TakeDamage(1);
             EventBus.EmitSound(SoundType.PlayerAttacked);
         }
-
-        // emit attack sound
-
     }
 
 

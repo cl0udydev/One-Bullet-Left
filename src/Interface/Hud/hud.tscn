@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bnk1do887gggf"]
+
+[ext_resource type="Script" uid="uid://batiaf078a2n0" path="res://src/Interface/Hud/Hud.cs" id="1_35w72"]
+[ext_resource type="PackedScene" uid="uid://ckjdcywyx31lu" path="res://src/Interface/Hud/HeartSlot.tscn" id="2_aryuq"]
+
+[node name="Hud" type="CanvasLayer" unique_id=1996990712]
+script = ExtResource("1_35w72")
+_heartSlotScene = ExtResource("2_aryuq")
+
+[node name="DamageFlash" type="ColorRect" parent="." unique_id=1072463989]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameplayUI" type="Control" parent="." unique_id=1446989900]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HeartsContainer" type="HBoxContainer" parent="GameplayUI" unique_id=761933861]
+layout_mode = 1
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 10.0
+offset_bottom = 10.0
+theme_override_constants/separation = 75

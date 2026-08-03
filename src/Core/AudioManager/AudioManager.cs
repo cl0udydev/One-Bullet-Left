@@ -10,7 +10,8 @@ public partial class AudioManager : Node
     public override void _Ready()
     {
         _soundLibrary.Add(SoundType.Shot, GD.Load<AudioStream>("res://assets/Sounds/gunshot.wav"));
-        _soundLibrary.Add(SoundType.PlayerAttacked, GD.Load<AudioStream>("res://assets/Sounds/dmg.wav"));
+        _soundLibrary.Add(SoundType.PlayerAttacked, GD.Load<AudioStream>("res://assets/Sounds/player_dmg.wav"));
+        _soundLibrary.Add(SoundType.EnemyAttacked, GD.Load<AudioStream>("res://assets/Sounds/enemy_dmg.wav"));
 
         foreach (Node child in GetChildren())
         {

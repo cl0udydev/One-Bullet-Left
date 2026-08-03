@@ -44,3 +44,4 @@ _shootSprite = NodePath("../PlayerSprite/ShootSprite")
 [node name="HealthComponent" type="Node" parent="." unique_id=1717164733]
 script = ExtResource("7_wynrj")
 MaxHealth = 3
+_isPlayer = true
