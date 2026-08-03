@@ -14,7 +14,7 @@ public partial class Bullet : Area2D
 
 		if (_isFlying)
 		{
-		GlobalPosition += _direction * Speed;
+		GlobalPosition += _direction * Speed * (float)delta;
 		}
     }
 
@@ -25,8 +25,14 @@ public partial class Bullet : Area2D
 
 	public void OnBodyEntered(Node body)
 	{
+		
 		if (_isFlying)
 		{
+			if (body is PlayerController) 
+			{
+				return;
+			}
+			
 			HealthComponent enemyHealth = body.GetNodeOrNull<HealthComponent>("HealthComponent");
 			if (enemyHealth != null)
 			{

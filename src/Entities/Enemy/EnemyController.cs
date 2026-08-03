@@ -7,12 +7,15 @@ public partial class EnemyController : CharacterBody2D
 	private EnemyStateMachine _stateMachine;
 	private MovementComponent _movementComponent;
 	private HealthComponent _healthComponent;
+	private Area2D _attackArea;
+	public Area2D AttackArea => _attackArea;
 
     public override void _Ready()
     {
         _stateMachine = GetNode<EnemyStateMachine>("EnemyStateMachine");
 		_movementComponent = GetNode<MovementComponent>("MovementComponent");
 		_healthComponent = GetNode<HealthComponent>("HealthComponent");
+		_attackArea = GetNode<Area2D>("AttackArea");
 
 		_healthComponent.OnDied += HandleDeath;
 

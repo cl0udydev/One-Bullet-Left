@@ -12,6 +12,9 @@ radius = 101.24229
 [sub_resource type="CircleShape2D" id="CircleShape2D_gk8ox"]
 radius = 2839.7043
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ubtcc"]
+radius = 154.01299
+
 [node name="Enemy" type="CharacterBody2D" unique_id=781765464]
 script = ExtResource("1_2qoqy")
 
@@ -38,6 +41,11 @@ shape = SubResource("CircleShape2D_fpf7n")
 
 [node name="VisibilityCollision" type="CollisionShape2D" parent="VisibilityArea" unique_id=1606998107]
 shape = SubResource("CircleShape2D_gk8ox")
+
+[node name="AttackArea" type="Area2D" parent="." unique_id=348897056]
+
+[node name="AttackCollision" type="CollisionShape2D" parent="AttackArea" unique_id=1630005694]
+shape = SubResource("CircleShape2D_ubtcc")
 
 [connection signal="body_entered" from="VisibilityArea" to="." method="OnVisibilityAreaBodyEntered"]
 [connection signal="body_exited" from="VisibilityArea" to="." method="OnVisibilityAreaBodyExited"]

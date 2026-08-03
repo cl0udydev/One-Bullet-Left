@@ -33,7 +33,7 @@ public class EnemyChaseState : EnemyState
         Godot.Vector2 targetPosition = _enemyController.PlayerRef.GlobalPosition;
         Godot.Vector2 direction = _enemyController.GlobalPosition.DirectionTo(targetPosition);
 
-        if (_enemyController.GlobalPosition.DistanceTo(targetPosition) < 300f)
+        if (_enemyController.AttackArea.OverlapsBody(_enemyController.PlayerRef))
         {
             _enemyStateMachine.ChangeState(new EnemyAttackState(_enemyController, _enemyStateMachine, _movementComponent));
             return;
