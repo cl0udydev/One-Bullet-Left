@@ -13,13 +13,11 @@ public class EnemyChaseState : EnemyState
     public override void Enter()
     {
         base.Enter();
-        GD.Print("враг бежит");
     }
 
     public override void Exit()
     {
         base.Exit();
-        GD.Print("враг перестал бежать");
     }
 
     public override void PhysicsUpdate(double delta)
@@ -35,6 +33,11 @@ public class EnemyChaseState : EnemyState
         Godot.Vector2 targetPosition = _enemyController.PlayerRef.GlobalPosition;
         Godot.Vector2 direction = _enemyController.GlobalPosition.DirectionTo(targetPosition);
 
+        if (_enemyController.GlobalPosition.DistanceTo(targetPosition) < 300f)
+        {
+            _enemyStateMachine.ChangeState(new EnemyAttackState(_enemyController, _enemyStateMachine, _movementComponent));
+            return;
+        }
         _movementComponent.Move(direction);
     }
     

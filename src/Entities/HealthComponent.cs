@@ -6,7 +6,6 @@ public partial class HealthComponent : Node
 {
     [Export] public int MaxHealth;
     private int CurrentHealth;
-
     public event Action OnDied;
 
     public override void _Ready()

@@ -13,6 +13,7 @@ public partial class EnemyController : CharacterBody2D
         _stateMachine = GetNode<EnemyStateMachine>("EnemyStateMachine");
 		_movementComponent = GetNode<MovementComponent>("MovementComponent");
 		_healthComponent = GetNode<HealthComponent>("HealthComponent");
+
 		_healthComponent.OnDied += HandleDeath;
 
 		_stateMachine.Initialize(new EnemyIdleState(this, _stateMachine, _movementComponent));
@@ -23,7 +24,6 @@ public partial class EnemyController : CharacterBody2D
 		if (body is PlayerController player)
 		{
 			PlayerRef = player;
-			GD.Print("Враг заметил движение!");
 		}
 	}
 
@@ -32,7 +32,6 @@ public partial class EnemyController : CharacterBody2D
 		if (body == PlayerRef)
 		{
 			PlayerRef = null;
-			GD.Print("Игрок скрылся из виду");
 		}
 	}
 

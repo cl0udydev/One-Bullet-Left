@@ -11,13 +11,11 @@ public class EnemyIdleState : EnemyState
     public override void Enter()
     {
         base.Enter();
-        GD.Print("враг ожидает");
     }
 
     public override void Exit()
     {
         base.Exit();
-        GD.Print("враг перестал ожидать");
     }
 
     public override void PhysicsUpdate(double delta)

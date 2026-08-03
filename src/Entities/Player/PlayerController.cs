@@ -5,6 +5,7 @@ public partial class PlayerController : CharacterBody2D
 {
 	private MovementComponent _movementComponent;
 	private WeaponComponent _weaponComponent;
+	private HealthComponent _healthComponent;
 	private Sprite2D _sprite;
 
 	public override void _Ready()
@@ -12,6 +13,10 @@ public partial class PlayerController : CharacterBody2D
 		_movementComponent = GetNode<MovementComponent>("MovementComponent");
 		_weaponComponent = GetNode<WeaponComponent>("WeaponComponent");
 		_sprite = GetNode<Sprite2D>("PlayerSprite");
+		_healthComponent = GetNode<HealthComponent>("HealthComponent");
+
+		_healthComponent.OnDied += HandleDeath;
+
 	}
 
     public override void _PhysicsProcess(double delta)
@@ -30,5 +35,12 @@ public partial class PlayerController : CharacterBody2D
 			_weaponComponent.Shoot(direction);
 		}
     }
+	
+	private void HandleDeath()
+	{
+		EventBus.EmitDeath(this);
+
+		QueueFree();
+	}
 
 }

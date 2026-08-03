@@ -6,9 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://1g20bcbeedyq" path="res://assets/Entities/Player/spr_shoot_fire.png" id="3_cx5l2"]
 [ext_resource type="Script" uid="uid://cf168c2lm0ytd" path="res://src/Entities/Player/WeaponComponent.cs" id="4_e1ays"]
 [ext_resource type="PackedScene" uid="uid://bag0icpwcrai7" path="res://src/Entities/Bullet/bullet.tscn" id="5_346rv"]
+[ext_resource type="Script" uid="uid://d3nfka4qtn1fm" path="res://src/Entities/HealthComponent.cs" id="7_wynrj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ubtcc"]
-radius = 120.01666
+radius = 122.016396
 
 [node name="Player" type="CharacterBody2D" unique_id=150555658]
 script = ExtResource("1_1pnha")
@@ -26,7 +27,7 @@ scale = Vector2(14.000001, 14.000001)
 texture = ExtResource("3_cx5l2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1014472454]
-position = Vector2(-69, -2)
+position = Vector2(-74, 0)
 shape = SubResource("CircleShape2D_ubtcc")
 
 [node name="MovementComponent" type="Node" parent="." unique_id=1617792103 node_paths=PackedStringArray("BodyToMove")]
@@ -39,3 +40,7 @@ script = ExtResource("4_e1ays")
 BulletScene = ExtResource("5_346rv")
 _marker = NodePath("../PlayerSprite/Marker2D")
 _shootSprite = NodePath("../PlayerSprite/ShootSprite")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=1717164733]
+script = ExtResource("7_wynrj")
+MaxHealth = 3
