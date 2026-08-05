@@ -1,24 +1,28 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 
 public partial class EnemyStateMachine : Node
 {
 	private EnemyState _currentState;
+	private Dictionary<string, EnemyState> _states = new();
 
-	public void Initialize(EnemyState startingState)
+	public void SetupStates(EnemyController controller, MovementComponent movement)
 	{
-		_currentState = startingState;
-		_currentState.Enter();
+		_states.Add("idle", new EnemyIdleState(controller, this, movement));
+		_states.Add("chase", new EnemyChaseState(controller, this, movement));
+		_states.Add("attack", new EnemyAttackState(controller, this, movement));
+
+		_currentState = _states["idle"];
+    	_currentState.Enter();
 	}
-
-	public void ChangeState(EnemyState newState)
+	
+	public void ChangeStateByName(string stateName)
 	{
-		if (_currentState != null)
-		{
-			_currentState.Exit();
-		}
-
-		_currentState = newState;
+		if (!_states.ContainsKey(stateName)) return;
+		
+		_currentState?.Exit();
+		_currentState = _states[stateName];
 		_currentState.Enter();
 	}
 

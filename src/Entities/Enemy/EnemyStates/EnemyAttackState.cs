@@ -37,7 +37,7 @@ public class EnemyAttackState : EnemyState
 
         if (_timer >= _attackCooldown)
         {
-            _enemyStateMachine.ChangeState(new EnemyChaseState(_enemyController, _enemyStateMachine, _movementComponent));
+            _enemyStateMachine.ChangeStateByName("chase");
         }
     }
 

@@ -27,7 +27,7 @@ public class EnemyChaseState : EnemyState
 
         if (_enemyController.PlayerRef == null)
         {
-            _enemyStateMachine.ChangeState(new EnemyIdleState(_enemyController, _enemyStateMachine, _movementComponent));
+            _enemyStateMachine.ChangeStateByName("idle");
             return;
         }
 
@@ -36,7 +36,7 @@ public class EnemyChaseState : EnemyState
 
         if (_enemyController.AttackArea.OverlapsBody(_enemyController.PlayerRef))
         {
-            _enemyStateMachine.ChangeState(new EnemyAttackState(_enemyController, _enemyStateMachine, _movementComponent));
+            _enemyStateMachine.ChangeStateByName("attack");
             return;
         }
 

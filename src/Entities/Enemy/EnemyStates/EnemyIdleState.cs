@@ -25,7 +25,7 @@ public class EnemyIdleState : EnemyState
 
         if (_enemyController.PlayerRef != null)
         {
-            _enemyStateMachine.ChangeState(new EnemyChaseState(_enemyController, _enemyStateMachine, _movementComponent));
+            _enemyStateMachine.ChangeStateByName("chase");
         }
     }
 }

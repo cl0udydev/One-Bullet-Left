@@ -23,7 +23,7 @@ public partial class EnemyController : CharacterBody2D
 
 		_healthComponent.OnDied += HandleDeath;
 
-		_stateMachine.Initialize(new EnemyIdleState(this, _stateMachine, _movementComponent));
+		_stateMachine.SetupStates(this, _movementComponent);
     }
 	
 
