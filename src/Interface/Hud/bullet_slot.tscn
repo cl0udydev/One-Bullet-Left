@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://yp1qwpp7gvvk"]
+
+[ext_resource type="Texture2D" uid="uid://dq1awnpa75f3m" path="res://assets/Hud/spr_bullet_full.png" id="1_pbpor"]
+[ext_resource type="Script" uid="uid://jxo5q43usfh0" path="res://src/Interface/Hud/BulletSlot.cs" id="1_t16mq"]
+[ext_resource type="Texture2D" uid="uid://bbj6k3wgnivlq" path="res://assets/Hud/spr_bullet_hollow.png" id="2_ohpv6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ubtcc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pbpor")
+}],
+"loop": 0,
+"name": &"full",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ohpv6")
+}],
+"loop": 1,
+"name": &"hollow",
+"speed": 5.0
+}]
+
+[node name="BulletSlot" type="Control" unique_id=1575033745]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_t16mq")
+
+[node name="BulletSprite" type="AnimatedSprite2D" parent="." unique_id=598695990]
+position = Vector2(2.3841858e-07, 32)
+scale = Vector2(3.4765627, 3.4765627)
+sprite_frames = SubResource("SpriteFrames_ubtcc")
+animation = &"full"
+autoplay = "full"

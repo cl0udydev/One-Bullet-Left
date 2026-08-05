@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public partial class Hud : CanvasLayer
 {
     [Export] private PackedScene _heartSlotScene;
+    private BulletSlot _bulletSlotSprite;
     private HBoxContainer _heartsContainer;
     private List<HeartSlot> _heartSlots = new();
     private ColorRect _damageFlash;
@@ -13,9 +14,12 @@ public partial class Hud : CanvasLayer
     public override void _Ready()
     {
         _damageFlash = GetNode<ColorRect>("DamageFlash");
-        _heartsContainer = GetNode<HBoxContainer>("GameplayUI/HeartsContainer");
+        _heartsContainer = GetNode<HBoxContainer>("GameplayUI/HBoxContainer/HeartsContainer");
+        _bulletSlotSprite = GetNode<BulletSlot>("GameplayUI/HBoxContainer/BulletSlot");
 
         EventBus.PlayerHealthChanged += OnPlayerHealthChanged;
+        EventBus.ChangingBulletAvailability += ChangeBulletSlot;
+        
 
         for (int i = 0; i < 3; i++)
         {
@@ -29,6 +33,7 @@ public partial class Hud : CanvasLayer
     {
         base._ExitTree();
         EventBus.PlayerHealthChanged -= OnPlayerHealthChanged;
+        EventBus.ChangingBulletAvailability -= ChangeBulletSlot;
     }
 
     private void OnPlayerHealthChanged(int currentHealth)
@@ -67,5 +72,17 @@ public partial class Hud : CanvasLayer
         flashTween.TweenProperty(_damageFlash, "modulate", new Color(1f, 1f, 1f, 0f), 0.4f)
         .SetTrans(Tween.TransitionType.Cubic) 
         .SetEase(Tween.EaseType.Out);
+    }
+
+    private void ChangeBulletSlot(bool HaveBullet)
+    {
+        if (HaveBullet)
+        {
+            _bulletSlotSprite.PlayFull();
+        }
+        else
+        {
+            _bulletSlotSprite.PlayHollow();
+        }
     }
 }

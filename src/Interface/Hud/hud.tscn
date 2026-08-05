@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://batiaf078a2n0" path="res://src/Interface/Hud/Hud.cs" id="1_35w72"]
 [ext_resource type="PackedScene" uid="uid://ckjdcywyx31lu" path="res://src/Interface/Hud/HeartSlot.tscn" id="2_aryuq"]
+[ext_resource type="PackedScene" uid="uid://yp1qwpp7gvvk" path="res://src/Interface/Hud/bullet_slot.tscn" id="3_w433l"]
 
 [node name="Hud" type="CanvasLayer" unique_id=1996990712]
 script = ExtResource("1_35w72")
@@ -23,10 +24,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HeartsContainer" type="HBoxContainer" parent="GameplayUI" unique_id=761933861]
+[node name="HBoxContainer" type="HBoxContainer" parent="GameplayUI" unique_id=1630486497]
 layout_mode = 1
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 10.0
-offset_bottom = 10.0
-theme_override_constants/separation = 75
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 180.0
+offset_bottom = 30.0
+theme_override_constants/separation = 150
+
+[node name="HeartsContainer" type="HBoxContainer" parent="GameplayUI/HBoxContainer" unique_id=761933861]
+layout_mode = 2
+theme_override_constants/separation = 90
+
+[node name="BulletSlot" parent="GameplayUI/HBoxContainer" unique_id=1575033745 instance=ExtResource("3_w433l")]
+layout_mode = 2

@@ -66,8 +66,8 @@ scale = Vector2(11.3125, 11.3125)
 script = ExtResource("4_hdg5i")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=894485567]
-position = Vector2(32.707184, 32.972378)
-scale = Vector2(8.106354, 8.106354)
+position = Vector2(41.45856, 41.723755)
+scale = Vector2(10.362569, 10.362569)
 sprite_frames = SubResource("SpriteFrames_ubtcc")
 animation = &"full"
 autoplay = "full"

@@ -19,6 +19,7 @@ public partial class WeaponComponent : Node
 		if (!_haveBullet)
 		{
 			_haveBullet = true;
+			EventBus.EmitChangingBulletAvailability(_haveBullet);
 		}
 	}
 
@@ -44,6 +45,7 @@ public partial class WeaponComponent : Node
 			_shootSprite.Hide();
 
 			_haveBullet = false;
+			EventBus.EmitChangingBulletAvailability(_haveBullet);
 		}
 	}
 }

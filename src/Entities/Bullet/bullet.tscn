@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bag0icpwcrai7"]
 
 [ext_resource type="Script" uid="uid://dmssbqaixssgn" path="res://src/Entities/Bullet/Bullet.cs" id="1_16qjq"]
-[ext_resource type="Texture2D" uid="uid://d8wmgnh13iv4" path="res://assets/Entities/Bullet/spr_bullet.png" id="1_aryhd"]
+[ext_resource type="Texture2D" uid="uid://c62oc4yx4weo5" path="res://assets/Entities/Bullet/spr_bullet_main.png" id="2_16qjq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aryhd"]
 radius = 25.0
@@ -12,8 +12,9 @@ script = ExtResource("1_16qjq")
 Speed = 12000.0
 
 [node name="BulletSprite" type="Sprite2D" parent="." unique_id=1829611185]
-scale = Vector2(16.140625, 16.140625)
-texture = ExtResource("1_aryhd")
+position = Vector2(2, -1)
+scale = Vector2(14.6635475, 14.6635475)
+texture = ExtResource("2_16qjq")
 
 [node name="BulletCollision" type="CollisionShape2D" parent="." unique_id=1133918287]
 position = Vector2(-4, 0)

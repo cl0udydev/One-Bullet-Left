@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d8wmgnh13iv4"
-path="res://.godot/imported/spr_bullet.png-0d87c31a87013ba9507f7e0cc2e7f7dd.ctex"
+uid="uid://bbj6k3wgnivlq"
+path="res://.godot/imported/spr_bullet_hollow.png-a91562f94ed965bf316f6f6fa7af726c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Entities/Bullet/spr_bullet.png"
-dest_files=["res://.godot/imported/spr_bullet.png-0d87c31a87013ba9507f7e0cc2e7f7dd.ctex"]
+source_file="res://assets/Hud/spr_bullet_hollow.png"
+dest_files=["res://.godot/imported/spr_bullet_hollow.png-a91562f94ed965bf316f6f6fa7af726c.ctex"]
 
 [params]
 
