@@ -1,18 +1,30 @@
 [gd_scene format=3 uid="uid://d1bkwnxcfuktb"]
 
 [ext_resource type="PackedScene" uid="uid://dva6kookq3udd" path="res://src/Entities/Player/Player.tscn" id="1_j6ulx"]
+[ext_resource type="Texture2D" uid="uid://l0mvfj5pl2rw" path="res://assets/TileSet/tile_parquet.png" id="1_rwvvc"]
 [ext_resource type="PackedScene" uid="uid://cdkyiumnhct8" path="res://src/Entities/Enemy/enemy.tscn" id="2_qlwl6"]
 [ext_resource type="PackedScene" uid="uid://bnk1do887gggf" path="res://src/Interface/Hud/hud.tscn" id="3_h17g3"]
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mf454"]
+texture = ExtResource("1_rwvvc")
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ubtcc"]
+sources/0 = SubResource("TileSetAtlasSource_mf454")
+
 [node name="Node2D" type="Node2D" unique_id=1789523357]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=899828020]
+tile_set = SubResource("TileSet_ubtcc")
 
 [node name="Hud" parent="." unique_id=1996990712 instance=ExtResource("3_h17g3")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1386521384]
-zoom = Vector2(0.2, 0.2)
+zoom = Vector2(2, 2)
 
 [node name="Player" parent="." unique_id=150555658 instance=ExtResource("1_j6ulx")]
-position = Vector2(1753, 335)
+position = Vector2(351, 3)
 
 [node name="Enemy" parent="." unique_id=781765464 instance=ExtResource("2_qlwl6")]
-position = Vector2(-2114, -437)
+position = Vector2(-244, -100)

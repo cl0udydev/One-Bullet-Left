@@ -9,12 +9,13 @@
 [ext_resource type="Script" uid="uid://d3nfka4qtn1fm" path="res://src/Entities/HealthComponent.cs" id="7_wynrj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ubtcc"]
-radius = 122.016396
+radius = 15.0
 
 [node name="Player" type="CharacterBody2D" unique_id=150555658]
 script = ExtResource("1_1pnha")
 
 [node name="PlayerSprite" type="Sprite2D" parent="." unique_id=1891616458]
+scale = Vector2(0.11999965, 0.11999965)
 texture = ExtResource("1_xyix2")
 
 [node name="Marker2D" type="Marker2D" parent="PlayerSprite" unique_id=1019513290]
@@ -27,13 +28,13 @@ scale = Vector2(14.000001, 14.000001)
 texture = ExtResource("3_cx5l2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1014472454]
-position = Vector2(-74, 0)
+position = Vector2(-8, 0)
 shape = SubResource("CircleShape2D_ubtcc")
 
 [node name="MovementComponent" type="Node" parent="." unique_id=1617792103 node_paths=PackedStringArray("BodyToMove")]
 script = ExtResource("3_1ehwi")
 BodyToMove = NodePath("..")
-Speed = 1750.0
+Speed = 300.0
 
 [node name="WeaponComponent" type="Node" parent="." unique_id=963335777 node_paths=PackedStringArray("_marker", "_shootSprite")]
 script = ExtResource("4_e1ays")
