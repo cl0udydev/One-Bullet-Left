@@ -1,3 +1,91 @@
 [gd_scene format=3 uid="uid://c850eofpau0lh"]
 
-[node name="MainMenu" type="Node2D" unique_id=207541699]
+[ext_resource type="Script" uid="uid://dasirmt2l0xui" path="res://src/Interface/MainMenu/MainMenu.cs" id="1_as4pt"]
+[ext_resource type="Texture2D" uid="uid://qwa4hlemeqi8" path="res://assets/Interface/ui_long_button_default.png" id="1_s05sk"]
+[ext_resource type="Texture2D" uid="uid://naqkyhgpaki5" path="res://assets/Interface/ui_long_button_pressed.png" id="2_as4pt"]
+[ext_resource type="Texture2D" uid="uid://ccwaq1hwo5xo8" path="res://assets/Interface/ui_long_button_hover.png" id="3_uccxv"]
+[ext_resource type="FontFile" uid="uid://pfuexnxulu4l" path="res://assets/Fonts/Senotakaiguriddo-Regular.otf" id="5_uccxv"]
+
+[node name="MainMenu" type="Node2D" unique_id=207541699 node_paths=PackedStringArray("_playButton", "_exitButton", "_optionsButton")]
+script = ExtResource("1_as4pt")
+_playButton = NodePath("VBoxContainer/PlayButton/Label")
+_exitButton = NodePath("VBoxContainer/ExitButton/Label")
+_optionsButton = NodePath("VBoxContainer/OptionsButton/Label")
+
+[node name="GameNameLabel" type="Label" parent="." unique_id=1898106240]
+offset_left = -56.0
+offset_top = -53.0
+offset_right = 64.0
+offset_bottom = -29.0
+theme_override_fonts/font = ExtResource("5_uccxv")
+theme_override_font_sizes/font_size = 32
+text = "One Bullet Left"
+
+[node name="Camera" type="Camera2D" parent="." unique_id=1267308058]
+position = Vector2(0, -5)
+zoom = Vector2(9, 9)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=413847278]
+offset_left = -16.0
+offset_top = -18.0
+offset_right = 48.0
+offset_bottom = 98.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 10
+
+[node name="PlayButton" type="TextureButton" parent="VBoxContainer" unique_id=731529338]
+layout_mode = 2
+texture_normal = ExtResource("1_s05sk")
+texture_pressed = ExtResource("2_as4pt")
+texture_hover = ExtResource("3_uccxv")
+
+[node name="Label" type="Label" parent="VBoxContainer/PlayButton" unique_id=1833874175]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_uccxv")
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="OptionsButton" type="TextureButton" parent="VBoxContainer" unique_id=1146153591]
+layout_mode = 2
+texture_normal = ExtResource("1_s05sk")
+texture_pressed = ExtResource("2_as4pt")
+texture_hover = ExtResource("3_uccxv")
+
+[node name="Label" type="Label" parent="VBoxContainer/OptionsButton" unique_id=731807652]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_uccxv")
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="ExitButton" type="TextureButton" parent="VBoxContainer" unique_id=1398314738]
+layout_mode = 2
+texture_normal = ExtResource("1_s05sk")
+texture_pressed = ExtResource("2_as4pt")
+texture_hover = ExtResource("3_uccxv")
+
+[node name="Label" type="Label" parent="VBoxContainer/ExitButton" unique_id=1511251419]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_uccxv")
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="OnPlayButtonPressed"]
+[connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="OnExitButtonPressed"]

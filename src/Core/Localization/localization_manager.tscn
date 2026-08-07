@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b2l58heemjdub"]
+
+[ext_resource type="Script" uid="uid://b50gyqv67inoy" path="res://src/Core/Localization/LocalizationManager.cs" id="1_5dfyc"]
+
+[node name="LocalizationManager" type="Node" unique_id=212247209]
+script = ExtResource("1_5dfyc")

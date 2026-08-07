@@ -33,20 +33,19 @@ public partial class PlayerController : CharacterBody2D
 
 		_movementComponent.Move(inputDirection);
 
+		Vector2 mouseVelocity = Input.GetLastMouseVelocity();
+
+		if (mouseVelocity.Length() > 100f)
+		{
+			_sprite.LookAt(GetGlobalMousePosition());
+			_sprite.Rotation += Mathf.DegToRad(90);
+		}
+
 		if (Input.IsActionJustPressed("attack"))
 		{
 			var direction = _sprite.GlobalTransform.X.Rotated(Mathf.DegToRad(-90)).Normalized();
 			_weaponComponent.Shoot(direction);
 		}
-    }
-
-	public override void _Input(InputEvent @event)
-    {
-        if (@event is InputEventMouseMotion)
-        {
-            _sprite.LookAt(GetGlobalMousePosition());
-			_sprite.Rotation += Mathf.DegToRad(90);
-        }
     }
 	
 	private void HandleDeath()

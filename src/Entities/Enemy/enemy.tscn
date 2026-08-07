@@ -63,13 +63,13 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fpf7n"]
-radius = 9.055386
+radius = 11.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gk8ox"]
-radius = 271.00183
+radius = 308.0065
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ubtcc"]
-radius = 11.0
+radius = 13.0
 
 [node name="Enemy" type="CharacterBody2D" unique_id=781765464]
 script = ExtResource("1_2qoqy")
@@ -87,9 +87,9 @@ script = ExtResource("4_ej3j3")
 MaxHealth = 1
 
 [node name="EnemySprite" type="AnimatedSprite2D" parent="." unique_id=1116373927]
-position = Vector2(-1.9073486e-06, 5.722046e-06)
+position = Vector2(4.7683716e-07, -9.536743e-07)
 rotation = 1.5707964
-scale = Vector2(0.7775639, 0.7775639)
+scale = Vector2(0.9311213, 0.9311213)
 sprite_frames = SubResource("SpriteFrames_ubtcc")
 animation = &"chase"
 autoplay = "idle"

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="One Bullet Left"
-run/main_scene="uid://d1bkwnxcfuktb"
+run/main_scene="uid://c850eofpau0lh"
 config/features=PackedStringArray("4.7", "C#", "Mobile")
 config/icon="res://icon.svg"
 
@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 EventBus="*uid://gcbewvk45qoi"
 AudioManager="*uid://duux78jncfdnb"
 GameManager="*uid://b2h2sw1vjfj6m"
+LocalizationManager="*uid://b2l58heemjdub"
 
 [display]
 
@@ -61,8 +62,10 @@ attack={
 
 [physics]
 
-common/physics_ticks_per_second=180
+common/physics_ticks_per_second=280
+common/max_physics_steps_per_frame=16
 3d/physics_engine="Jolt Physics"
+common/physics_interpolation=true
 
 [rendering]
 

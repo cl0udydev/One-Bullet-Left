@@ -10,8 +10,4 @@ public partial class GameManager : Node
 
         Input.SetCustomMouseCursor(cursorTexture, Input.CursorShape.Arrow, hotspot);
 	}
-
-	public override void _Process(double delta)
-	{
-	}
 }

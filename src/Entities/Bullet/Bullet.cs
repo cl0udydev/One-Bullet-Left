@@ -53,7 +53,7 @@ public partial class Bullet : Area2D
 				GlobalPosition -= _direction * 5f;
 			}
 
-			_bulletCollision.Scale = new Vector2(2.0f, 2.0f);
+			_bulletCollision.Scale = new Vector2(3.0f, 3.0f);
 		}
 		else
 		{
