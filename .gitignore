@@ -11,3 +11,6 @@ Thumbs.db
 bin/
 obj/
 .mono/
+
+export_presets.cfg
+/releases

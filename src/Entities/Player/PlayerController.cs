@@ -30,8 +30,6 @@ public partial class PlayerController : CharacterBody2D
     {
         base._PhysicsProcess(delta);
 
-		_sprite.LookAt(GetGlobalMousePosition());
-
 		Vector2 inputDirection = Input.GetVector("move_left", "move_right", "move_up", "move_down");
 
 		_movementComponent.Move(inputDirection);
@@ -41,6 +39,14 @@ public partial class PlayerController : CharacterBody2D
 			var direction = _sprite.GlobalTransform.X;
 			_weaponComponent.Shoot(direction);
 		}
+    }
+
+	public override void _Input(InputEvent @event)
+    {
+        if (@event is InputEventMouseMotion)
+        {
+            _sprite.LookAt(GetGlobalMousePosition());
+        }
     }
 	
 	private void HandleDeath()
