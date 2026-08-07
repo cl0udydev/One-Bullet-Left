@@ -63,13 +63,13 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fpf7n"]
-radius = 11.18034
+radius = 7.071068
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gk8ox"]
-radius = 503.0358
+radius = 271.00183
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ubtcc"]
-radius = 18.867962
+radius = 11.0
 
 [node name="Enemy" type="CharacterBody2D" unique_id=781765464]
 script = ExtResource("1_2qoqy")
@@ -80,22 +80,23 @@ script = ExtResource("2_ej3j3")
 [node name="MovementComponent" type="Node" parent="." unique_id=1022412702 node_paths=PackedStringArray("BodyToMove")]
 script = ExtResource("3_gk8ox")
 BodyToMove = NodePath("..")
-Speed = 200.0
+Speed = 150.0
 
 [node name="HealthComponent" type="Node" parent="." unique_id=129602828]
 script = ExtResource("4_ej3j3")
 MaxHealth = 1
 
 [node name="EnemySprite" type="AnimatedSprite2D" parent="." unique_id=1116373927]
-position = Vector2(9.536743e-07, -9.536743e-07)
+position = Vector2(-1.9073486e-06, 5.722046e-06)
 rotation = 1.5707964
-scale = Vector2(1.3092713, 1.3092713)
+scale = Vector2(0.7775639, 0.7775639)
 sprite_frames = SubResource("SpriteFrames_ubtcc")
 animation = &"chase"
 autoplay = "idle"
 frame_progress = 0.53519195
 
 [node name="EnemyCollision" type="CollisionShape2D" parent="." unique_id=822359801]
+visible = false
 shape = SubResource("CircleShape2D_fpf7n")
 
 [node name="VisibilityArea" type="Area2D" parent="." unique_id=123094310]
@@ -104,6 +105,7 @@ shape = SubResource("CircleShape2D_fpf7n")
 shape = SubResource("CircleShape2D_gk8ox")
 
 [node name="AttackArea" type="Area2D" parent="." unique_id=348897056]
+visible = false
 
 [node name="AttackCollision" type="CollisionShape2D" parent="AttackArea" unique_id=1630005694]
 shape = SubResource("CircleShape2D_ubtcc")

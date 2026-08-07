@@ -7,6 +7,13 @@ public partial class Bullet : Area2D
 	private bool _isFlying = true;
 	[Export] public int Damage { get; set; } = 1;
 	private Vector2 _direction;
+	private CollisionShape2D _bulletCollision;
+
+    public override void _Ready()
+    {
+        _bulletCollision = GetNode<CollisionShape2D>("BulletCollision");
+    }
+
 
     public override void _PhysicsProcess(double delta)
     {
@@ -33,6 +40,12 @@ public partial class Bullet : Area2D
 				return;
 			}
 
+			if (body is TileMapLayer)
+			{
+				_isFlying = false;
+				GlobalPosition -= _direction * 35f;
+			}
+
 			HealthComponent enemyHealth = body.GetNodeOrNull<HealthComponent>("HealthComponent");
 			if (enemyHealth != null)
 			{
@@ -40,6 +53,8 @@ public partial class Bullet : Area2D
 				_isFlying = false;
 				GlobalPosition -= _direction * 35f;
 			}
+
+			_bulletCollision.Scale = new Vector2(3.0f, 3.0f);
 		}
 		else
 		{
@@ -47,6 +62,7 @@ public partial class Bullet : Area2D
 			if (playerWeapon != null)
 			{
 				playerWeapon.ReturnBullet();
+				_bulletCollision.Scale = new Vector2(1.0f, 1.0f);
 				QueueFree();
 			}
 		}
