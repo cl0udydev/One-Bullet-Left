@@ -7,6 +7,8 @@ public partial class EnemySpawner : Node
 	private Godot.Collections.Array<Node> _spawnMarkers = new () {};
 	private Timer _timer;
 	[Export] public PackedScene EnemyScene { get; set; }
+	[Export] private int maxAmount;
+	private int currentAmount;
 
     public override void _Ready()
 	{
@@ -26,6 +28,12 @@ public partial class EnemySpawner : Node
 		if (newObject is Node2D enemy2D && CurrentMarker is Node2D marker2D)
 		{
 			enemy2D.GlobalPosition = marker2D.GlobalPosition;
+			currentAmount += 1;
+
+			if (currentAmount == maxAmount)
+			{
+				_timer.Stop();
+			}
 		}
 
 		

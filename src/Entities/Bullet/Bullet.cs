@@ -4,7 +4,7 @@ using System;
 public partial class Bullet : Area2D
 {
 	[Export] public float Speed { get; set; }
-	private bool _isFlying = true;
+	private bool _isFlying { get; set; }
 	[Export] public int Damage { get; set; } = 1;
 	private Vector2 _direction;
 	private CollisionShape2D _bulletCollision;
@@ -12,22 +12,21 @@ public partial class Bullet : Area2D
     public override void _Ready()
     {
         _bulletCollision = GetNode<CollisionShape2D>("BulletCollision");
+		_isFlying = true;
     }
 
 
     public override void _PhysicsProcess(double delta)
     {
-        base._PhysicsProcess(delta);
-
 		if (_isFlying)
 		{
-		GlobalPosition += _direction * Speed * (float)delta;
+			GlobalPosition += _direction * Speed * (float)delta;
 		}
     }
 
 	public void SetDirection(Vector2 dir) 
 	{ 
-		_direction = dir;
+		_direction = dir.Normalized();
 	}
 
 	public void OnBodyEntered(Node body)
@@ -43,7 +42,7 @@ public partial class Bullet : Area2D
 			if (body is TileMapLayer)
 			{
 				_isFlying = false;
-				GlobalPosition -= _direction * 35f;
+				GlobalPosition -= _direction * 5f;
 			}
 
 			HealthComponent enemyHealth = body.GetNodeOrNull<HealthComponent>("HealthComponent");
@@ -51,10 +50,10 @@ public partial class Bullet : Area2D
 			{
 				enemyHealth.TakeDamage(Damage);
 				_isFlying = false;
-				GlobalPosition -= _direction * 35f;
+				GlobalPosition -= _direction * 5f;
 			}
 
-			_bulletCollision.Scale = new Vector2(3.0f, 3.0f);
+			_bulletCollision.Scale = new Vector2(2.0f, 2.0f);
 		}
 		else
 		{

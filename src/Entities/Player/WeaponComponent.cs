@@ -23,29 +23,29 @@ public partial class WeaponComponent : Node
 		}
 	}
 
-	public async void Shoot(Vector2 direction)
-	{
-		if (_haveBullet)
-		{
-			
-			Bullet newBullet = BulletScene.Instantiate<Bullet>();
-			newBullet.SetDirection(direction);
+    public async void Shoot(Vector2 direction)
+    {
+        if (_haveBullet)
+        {
+            _haveBullet = false;
+            EventBus.EmitChangingBulletAvailability(_haveBullet);
 
-			newBullet.GlobalPosition = _marker.GlobalPosition;
-			newBullet.GlobalRotation = _marker.GlobalRotation;
+            Bullet newBullet = BulletScene.Instantiate<Bullet>();
+
+            newBullet.SetDirection(direction);
+
+            newBullet.GlobalPosition = _marker.GlobalPosition;
+            
+            newBullet.GlobalRotation = direction.Angle();
 
 			GetTree().Root.AddChild(newBullet);
-
-			EventBus.EmitSound(SoundType.Shot);
 			
-			_shootSprite.Show();
+            EventBus.EmitSound(SoundType.Shot);
+            
+            _shootSprite.Show();
+            await ToSignal(GetTree().CreateTimer(0.05f), SceneTreeTimer.SignalName.Timeout);
+            _shootSprite.Hide();
+        }
+    }
 
-			await ToSignal(GetTree().CreateTimer(0.05f), SceneTreeTimer.SignalName.Timeout);
-
-			_shootSprite.Hide();
-
-			_haveBullet = false;
-			EventBus.EmitChangingBulletAvailability(_haveBullet);
-		}
-	}
 }

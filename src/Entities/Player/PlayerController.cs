@@ -28,7 +28,6 @@ public partial class PlayerController : CharacterBody2D
 
     public override void _PhysicsProcess(double delta)
     {
-        base._PhysicsProcess(delta);
 
 		Vector2 inputDirection = Input.GetVector("move_left", "move_right", "move_up", "move_down");
 
@@ -36,7 +35,7 @@ public partial class PlayerController : CharacterBody2D
 
 		if (Input.IsActionJustPressed("attack"))
 		{
-			var direction = _sprite.GlobalTransform.X;
+			var direction = _sprite.GlobalTransform.X.Rotated(Mathf.DegToRad(-90)).Normalized();
 			_weaponComponent.Shoot(direction);
 		}
     }
@@ -46,6 +45,7 @@ public partial class PlayerController : CharacterBody2D
         if (@event is InputEventMouseMotion)
         {
             _sprite.LookAt(GetGlobalMousePosition());
+			_sprite.Rotation += Mathf.DegToRad(90);
         }
     }
 	

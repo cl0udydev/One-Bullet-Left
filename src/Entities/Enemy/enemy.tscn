@@ -63,7 +63,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fpf7n"]
-radius = 7.071068
+radius = 9.055386
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gk8ox"]
 radius = 271.00183
@@ -96,7 +96,6 @@ autoplay = "idle"
 frame_progress = 0.53519195
 
 [node name="EnemyCollision" type="CollisionShape2D" parent="." unique_id=822359801]
-visible = false
 shape = SubResource("CircleShape2D_fpf7n")
 
 [node name="VisibilityArea" type="Area2D" parent="." unique_id=123094310]
@@ -105,7 +104,6 @@ shape = SubResource("CircleShape2D_fpf7n")
 shape = SubResource("CircleShape2D_gk8ox")
 
 [node name="AttackArea" type="Area2D" parent="." unique_id=348897056]
-visible = false
 
 [node name="AttackCollision" type="CollisionShape2D" parent="AttackArea" unique_id=1630005694]
 shape = SubResource("CircleShape2D_ubtcc")

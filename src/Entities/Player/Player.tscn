@@ -14,18 +14,20 @@
 script = ExtResource("1_1pnha")
 
 [node name="PlayerSprite" type="Sprite2D" parent="." unique_id=1891616458]
-position = Vector2(5, 0)
-scale = Vector2(0.08000064, 0.08000064)
+position = Vector2(4.7683716e-07, -2.3841858e-07)
+rotation = 1.5707964
+scale = Vector2(0.93786246, 0.93786246)
 texture = ExtResource("1_xyix2")
-
-[node name="Marker2D" type="Marker2D" parent="PlayerSprite" unique_id=1019513290]
-position = Vector2(239, 0)
 
 [node name="ShootSprite" type="Sprite2D" parent="PlayerSprite" unique_id=1029668059]
 visible = false
-position = Vector2(278, 3)
-scale = Vector2(14.000001, 14.000001)
+position = Vector2(-1.013279e-06, -28.788872)
+rotation = -1.5707964
+scale = Vector2(0.8883257, 0.8883257)
 texture = ExtResource("3_cx5l2")
+
+[node name="Marker2D" type="Marker2D" parent="PlayerSprite" unique_id=963970821]
+position = Vector2(-9.109718e-07, -26.656359)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1014472454]
 shape = SubResource("CircleShape2D_ubtcc")
