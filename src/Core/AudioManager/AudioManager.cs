@@ -15,7 +15,7 @@ public partial class AudioManager : Node
 
         foreach (Node child in GetChildren())
         {
-            if (child is AudioStreamPlayer player)
+            if (child is AudioStreamPlayer player && child.IsInGroup("Sound"))
             {
                 _audioPlayers.Add(player);
             }

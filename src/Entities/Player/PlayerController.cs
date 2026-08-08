@@ -35,7 +35,7 @@ public partial class PlayerController : CharacterBody2D
 
 		Vector2 mouseVelocity = Input.GetLastMouseVelocity();
 
-		if (mouseVelocity.Length() > 100f)
+		if (mouseVelocity.Length() > 50f)
 		{
 			_sprite.LookAt(GetGlobalMousePosition());
 			_sprite.Rotation += Mathf.DegToRad(90);

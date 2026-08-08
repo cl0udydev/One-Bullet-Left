@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cbiqhry7l28d2"]
+
+[ext_resource type="Script" uid="uid://df85275ycjipy" path="res://src/Interface/OptionsMenu/OptionsMenu.cs" id="1_ayu03"]
+[ext_resource type="Texture2D" uid="uid://c8twooucquu62" path="res://assets/Interface/ui_short_button_default.png" id="2_1f8lg"]
+[ext_resource type="Texture2D" uid="uid://cr7dce32mvar0" path="res://assets/Interface/ui_short_button_pressed.png" id="3_5lnu3"]
+[ext_resource type="Texture2D" uid="uid://c7f4nld2b33kf" path="res://assets/Interface/ui_short_button_hover.png" id="4_iwmcg"]
+[ext_resource type="Texture2D" uid="uid://cop86u5jyp24a" path="res://assets/Interface/ui_arrow.png" id="5_5lnu3"]
+
+[node name="OptionsMenu" type="Node2D" unique_id=859927897]
+script = ExtResource("1_ayu03")
+
+[node name="Camera" type="Camera2D" parent="." unique_id=618731037]
+position = Vector2(0, -5)
+zoom = Vector2(9, 9)
+
+[node name="BackButton" type="TextureButton" parent="." unique_id=477740574]
+offset_left = -103.0
+offset_top = -61.0
+offset_right = -71.0
+offset_bottom = -29.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("2_1f8lg")
+texture_pressed = ExtResource("3_5lnu3")
+texture_hover = ExtResource("4_iwmcg")
+
+[node name="Sprite2D" type="Sprite2D" parent="BackButton" unique_id=652719015]
+position = Vector2(16, 16)
+texture = ExtResource("5_5lnu3")
+
+[connection signal="pressed" from="BackButton" to="." method="OnBackButtonPressed"]

@@ -88,4 +88,5 @@ horizontal_alignment = 1
 vertical_alignment = 2
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="OnPlayButtonPressed"]
+[connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="OnOptionsButtonPressed"]
 [connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="OnExitButtonPressed"]

@@ -18,6 +18,11 @@ public partial class MainMenu : Node2D
 		GetTree().ChangeSceneToFile("res://src/Levels/node_2d.tscn");
 	}
 
+	public void OnOptionsButtonPressed()
+	{
+		GetTree().ChangeSceneToFile("res://src/Interface/OptionsMenu/options_menu.tscn");
+	}
+
 	public void OnExitButtonPressed()
 	{
 		GetTree().Quit();
