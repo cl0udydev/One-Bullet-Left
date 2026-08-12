@@ -7,23 +7,25 @@
 script = ExtResource("1_18wvh")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=5860936 groups=["Sound"]]
-volume_db = -10.0
+bus = &"SFX"
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=828188629 groups=["Sound"]]
-volume_db = -10.0
+bus = &"SFX"
 
 [node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="." unique_id=319223367 groups=["Sound"]]
-volume_db = -10.0
+bus = &"SFX"
 
 [node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="." unique_id=43483946 groups=["Sound"]]
-volume_db = -10.0
+bus = &"SFX"
 
 [node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="." unique_id=1714670461 groups=["Sound"]]
-volume_db = -10.0
+bus = &"SFX"
 
 [node name="Main" type="AudioStreamPlayer" parent="." unique_id=1483108918 groups=["Music"]]
 stream = ExtResource("2_2a5y6")
-volume_db = -25.0
+volume_db = -15.0
 autoplay = true
+bus = &"Music"
 
 [node name="AudioStreamPlayer7" type="AudioStreamPlayer" parent="." unique_id=1912364252 groups=["Music"]]
+bus = &"Music"

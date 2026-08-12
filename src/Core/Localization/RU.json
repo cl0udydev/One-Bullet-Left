@@ -1,5 +1,7 @@
 {
     "menu_play": "ИГРАТЬ",
     "menu_exit": "ВЫХОД",
-    "menu_options": "НАСТРОЙКИ"
+    "menu_options": "ОПЦИИ",
+    "options_sound": "ЗВУК",
+    "options_lang": "ЯЗЫК"
 }

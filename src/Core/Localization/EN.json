@@ -1,5 +1,7 @@
 {
     "menu_play": "PLAY",
     "menu_exit": "EXIT",
-    "menu_options": "OPTIONS"
+    "menu_options": "OPTIONS",
+    "options_sound": "SOUND",
+    "options_lang": "LANGUAGE"
 }

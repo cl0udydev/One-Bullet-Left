@@ -2,16 +2,61 @@
 
 [ext_resource type="Script" uid="uid://df85275ycjipy" path="res://src/Interface/OptionsMenu/OptionsMenu.cs" id="1_ayu03"]
 [ext_resource type="Texture2D" uid="uid://c8twooucquu62" path="res://assets/Interface/ui_short_button_default.png" id="2_1f8lg"]
+[ext_resource type="FontFile" uid="uid://pfuexnxulu4l" path="res://assets/Fonts/Senotakaiguriddo-Regular.otf" id="2_iwmcg"]
 [ext_resource type="Texture2D" uid="uid://cr7dce32mvar0" path="res://assets/Interface/ui_short_button_pressed.png" id="3_5lnu3"]
 [ext_resource type="Texture2D" uid="uid://c7f4nld2b33kf" path="res://assets/Interface/ui_short_button_hover.png" id="4_iwmcg"]
 [ext_resource type="Texture2D" uid="uid://cop86u5jyp24a" path="res://assets/Interface/ui_arrow.png" id="5_5lnu3"]
+[ext_resource type="Texture2D" uid="uid://bwm4xwsomvwqd" path="res://assets/Interface/ui_eng.png" id="7_2qeap"]
 
-[node name="OptionsMenu" type="Node2D" unique_id=859927897]
+[node name="OptionsMenu" type="Node2D" unique_id=859927897 node_paths=PackedStringArray("_masterVolumeSlider", "_soundLabel", "_langLabel", "_langButtonSprite")]
 script = ExtResource("1_ayu03")
+_masterVolumeSlider = NodePath("HSlider")
+_soundLabel = NodePath("SoundLabel")
+_langLabel = NodePath("LangLabel")
+_langButtonSprite = NodePath("LanguageButton/Sprite2D")
 
 [node name="Camera" type="Camera2D" parent="." unique_id=618731037]
 position = Vector2(0, -5)
 zoom = Vector2(9, 9)
+
+[node name="SoundLabel" type="Label" parent="." unique_id=1535321917]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = 3.0
+offset_right = 20.0
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_iwmcg")
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+
+[node name="LangLabel" type="Label" parent="." unique_id=995488629]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.5
+offset_top = -44.0
+offset_right = 0.5
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_iwmcg")
+theme_override_font_sizes/font_size = 32
+
+[node name="HSlider" type="HSlider" parent="." unique_id=939155150]
+offset_left = -32.0
+offset_top = 22.0
+offset_right = 49.0
+offset_bottom = 38.0
+scale = Vector2(0.8, 0.8)
+min_value = -50.0
+max_value = 10.0
+step = 0.1
 
 [node name="BackButton" type="TextureButton" parent="." unique_id=477740574]
 offset_left = -103.0
@@ -27,4 +72,20 @@ texture_hover = ExtResource("4_iwmcg")
 position = Vector2(16, 16)
 texture = ExtResource("5_5lnu3")
 
+[node name="LanguageButton" type="TextureButton" parent="." unique_id=315020624]
+offset_left = -8.0
+offset_top = -19.0
+offset_right = 24.0
+offset_bottom = 13.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("2_1f8lg")
+texture_pressed = ExtResource("3_5lnu3")
+texture_hover = ExtResource("4_iwmcg")
+
+[node name="Sprite2D" type="Sprite2D" parent="LanguageButton" unique_id=885574089]
+position = Vector2(16, 16)
+scale = Vector2(1.125, 1.125)
+texture = ExtResource("7_2qeap")
+
 [connection signal="pressed" from="BackButton" to="." method="OnBackButtonPressed"]
+[connection signal="pressed" from="LanguageButton" to="." method="OnLangButtonPressed"]

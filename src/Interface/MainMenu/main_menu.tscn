@@ -40,6 +40,7 @@ texture_pressed = ExtResource("2_as4pt")
 texture_hover = ExtResource("3_uccxv")
 
 [node name="Label" type="Label" parent="VBoxContainer/PlayButton" unique_id=1833874175]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -58,6 +59,7 @@ texture_pressed = ExtResource("2_as4pt")
 texture_hover = ExtResource("3_uccxv")
 
 [node name="Label" type="Label" parent="VBoxContainer/OptionsButton" unique_id=731807652]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -76,6 +78,7 @@ texture_pressed = ExtResource("2_as4pt")
 texture_hover = ExtResource("3_uccxv")
 
 [node name="Label" type="Label" parent="VBoxContainer/ExitButton" unique_id=1511251419]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
